@@ -7,6 +7,16 @@ import Listado from './views/Listado';
 function App() {
   
   const [citas, setCitas] = useState([]);
+  
+  const agregar = (newCita) => {
+    setCitas([...citas, newCita]);
+  };
+
+  const eliminar = (id) => { 
+    const listaCitas = citas.filter(cita => cita.id !== id) 
+    setCitas(listaCitas)
+  };
+  
   return (
 
     <>    
@@ -21,7 +31,7 @@ function App() {
       </div>      
     </div>
     </>
-  );
+  )
 }
 
 export default App;

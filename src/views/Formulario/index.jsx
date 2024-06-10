@@ -1,25 +1,41 @@
-import Citas from '../../components/Citas'
+import Cita from '../../components/Cita'
 import './style.css';
 
 const Formulario = (props) => {
     function aa(){
-
+        
     }
 
     return (
-        <div>
-            <form class="form">
-                <ul class="wrapper">
-                    <li style={{'--i': '4'}}><input className="input" type="text" placeholder="Name" required=""/></li>
-                    <li style={{'--i': '3'}}><input className="input" placeholder="Phone number" required="" name="phone"/></li>
-                    <li style={{'--i':'2'}}><input className="input" type="email" placeholder="E-mail" required="" name="email"/></li>
-                    <button style={{'--i':'1'}}>Submit</button>
-                    <h1>assssssssssss</h1>
-                </ul>
+        <div class="form-box">
+ 
+            <form>
+                <div class="user-box">
+                <input type="text" name="" required=""/>
+                <label>Nombre de la Mascota</label>
+                </div>
+                <div class="user-box">
+                <input type="text" name="" required=""/>
+                <label>Nombre del Dueño</label>
+                </div>
+                <div class="user-box">
+                <input type="date" name="" required=""/>
+                <label>Fecha</label>
+                </div>
+                <div class="user-box">
+                <input type="time" name="" required=""/>
+                <label>Hora</label>
+                </div>
+                <div class="user-box">
+                <textarea name="" required=""/>
+                <label>Sintomas</label>
+                </div><center>
+                <a href="#">
+                    SEND
+                <span></span>
+                </a></center>
             </form>
-
         </div>
-    
-)};
+    )};
 
 export default Formulario;
