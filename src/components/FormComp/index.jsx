@@ -23,7 +23,7 @@ function FormComp({nombreMascota, nombreDueño, fecha, hora, sintomas, error, se
                 </div>
                 <div class="user-box">
                 <textarea value={sintomas} onChange={(e) => setSintomas(e.target.value)} required=""/>
-                <label>Sintomas</label>
+                <label>Sintas</label>
                 </div><center>
                 <a href="#">
                     SEND
