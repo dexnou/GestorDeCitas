@@ -25,6 +25,8 @@ const Formulario = (props) => {
             return;
         }
 
+        
+
         // Convertir la fecha y hora ingresadas en milisegundos
         const fechaSeleccionada = new Date(fecha + 'T' + hora);
         const ahora = new Date();
