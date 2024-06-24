@@ -1,4 +1,6 @@
-import './style.css'
+import {style} from './style.jsx'
+import BotonEliminar from '../BotonEliminar'
+import CardText from '../CardText'
 
 const Cita = ({ cita, eliminarCita }) => {
 
@@ -7,13 +9,13 @@ const Cita = ({ cita, eliminarCita }) => {
     };
 
     return (
-        <div className="cita">
-            <p>Mascota: <span>{cita.mascota}</span></p>
-            <p>Dueño: <span>{cita.dueño}</span></p>
-            <p>Fecha: <span>{cita.fecha}</span></p>
-            <p>Hora: <span>{cita.hora}</span></p>
-            <p>Síntomas: <span>{cita.sintomas}</span></p>
-            <button onClick={handleEliminar} className="button eliminar u-full-width">Eliminar ×</button>
+        <div style={style.cita}>
+            <CardText titulo="Mascota" descripcion={cita.mascota}/>
+            <CardText titulo="Dueño" descripcion={cita.dueño}/>
+            <CardText titulo="Fecha" descripcion={cita.fecha}/>
+            <CardText titulo="Hora" descripcion={cita.hora}/>
+            <CardText titulo="Síntomas" descripcion={cita.sintomas}/>
+            <BotonEliminar onclick={handleEliminar}/>
         </div>
     )
 };

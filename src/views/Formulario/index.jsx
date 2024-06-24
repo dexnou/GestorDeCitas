@@ -2,6 +2,7 @@ import Cita from '../../components/Cita'
 import './style.css';
 import { v4 as uuidv4 } from 'uuid';
 import React, { useRef } from 'react';
+import Input from '../../components/Input'
 
 const Formulario = (props) => {
     const mascotaRef = useRef();
@@ -18,8 +19,8 @@ const Formulario = (props) => {
         const fecha = fechaRef.current.value.trim();
         const hora = horaRef.current.value.trim();
         const sintomas = sintomasRef.current.value.trim();
-
-        // Check if any required fields are empty
+        //Trim para eliminar espacios al inicio y al final
+        // Por si algun campo está vacio
         if (!mascota || !dueño || !fecha || !hora || !sintomas) {
             alert('Por favor completa todos los campos');
             return;
@@ -50,7 +51,7 @@ const Formulario = (props) => {
 
         props.agregarCita(nuevaCita); // Call the parent function to add the new cita
 
-        // Optionally, reset the form fields
+        // Resetea los valores de los campos
         mascotaRef.current.value = '';
         dueñoRef.current.value = '';
         fechaRef.current.value = '';
@@ -59,36 +60,36 @@ const Formulario = (props) => {
     };
 
     return (
-        <div className="form-box">
-            <form onSubmit={handleSubmit}>
-                <div className="user-box">
-                    <input type="text" ref={mascotaRef} name="mascota" required />
-                    <label>Nombre de la Mascota</label>
-                </div>
-                <div className="user-box">
-                    <input type="text" ref={dueñoRef} name="dueño" required />
-                    <label>Nombre del Dueño</label>
-                </div>
-                <div className="user-box">
-                    <input type="date" ref={fechaRef} name="fecha" required />
-                    <label>Fecha</label>
-                </div>
-                <div className="user-box">
-                    <input type="time" ref={horaRef} name="hora" required />
-                    <label>Hora</label>
-                </div>
-                <div className="user-box">
-                    <textarea ref={sintomasRef} name="sintomas" required />
-                    <label>Síntomas</label>
-                </div>
-                <center>
-                    <a href="#" onClick={handleSubmit}>
-                        SEND
-                        <span></span>
-                    </a>
-                </center>
-            </form>
+        <>
+        <div className='formulario'>
+            <h2>Saludos</h2>
+            <div className="form-box">
+                <form onSubmit={handleSubmit}>
+                    <div className="user-box">
+                        <Input tipo={"text"} contenidoAPoner={mascotaRef} label={"Nombre de la Mascota"}/>
+                    </div>
+                    <div className="user-box">
+                        <Input tipo={"text"} contenidoAPoner={dueñoRef} label={"Nombre del dueño"}/>
+                    </div>
+                    <div className="user-box">
+                        <Input tipo={"date"} contenidoAPoner={fechaRef} label={"Fecha"}/>
+                    </div>
+                    <div className="user-box">
+                        <Input tipo={"time"} contenidoAPoner={horaRef} label={"Hora"}/>
+                    </div>
+                    <div className="user-box">
+                        <Input tipo={"text"} contenidoAPoner={sintomasRef} label={"Síntomas"}/>
+                    </div>
+                    <center>
+                        <a href="#" onClick={handleSubmit}>
+                            SEND
+                            <span></span>
+                        </a>
+                    </center>
+                </form>
+            </div>
         </div>
+        </>
     );
 };
 

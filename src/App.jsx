@@ -15,9 +15,13 @@ function App() {
 
   // Función para agregar una nueva cita
   const agregarCita = (nuevaCita) => {
-    const citasActualizadas = [...citas, nuevaCita];
-    setCitas(citasActualizadas);
-    localStorage.setItem('citas', JSON.stringify(citasActualizadas));
+    const confirmarAgregar = window.confirm('Esta cita se agregará, ¿Está seguro de esta acción?')
+        if (confirmarAgregar) {
+          const citasActualizadas = [...citas, nuevaCita];
+          setCitas(citasActualizadas);
+          localStorage.setItem('citas', JSON.stringify(citasActualizadas));
+        }
+
   };
 
   // Función para eliminar una cita
@@ -32,12 +36,11 @@ function App() {
 
   return (
       <>
-          <h2>Saludos</h2>
           <div className="App">
-              <div className='formularioDiv'>
+              <div className='subDiv'>
                   <Formulario agregarCita={agregarCita} />
               </div>
-              <div className='listadoDiv'>
+              <div className='subDiv'>
                   <Listado citas={citas} setCitas={setCitas} eliminarCita={eliminarCita} />
               </div>
           </div>
