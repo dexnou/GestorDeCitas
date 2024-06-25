@@ -10,13 +10,13 @@ export const style = {
         outline: 'none',
         background: 'transparent',
         transition: 'opacity 0.3s ease',
-        opacity: '1', // Opacidad inicial
+        opacity: '0', // Opacidad inicial
     },
     inputDate: {
-        opacity: '1', // Opacidad inicial
+        opacity: '0', // Opacidad inicial
     },
     inputTime: {
-        opacity: '1', // Opacidad inicial
+        opacity: '0', // Opacidad inicial
     },
 
     label: {

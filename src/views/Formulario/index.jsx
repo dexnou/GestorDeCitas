@@ -66,19 +66,19 @@ const Formulario = (props) => {
             <div className="form-box">
                 <form onSubmit={handleSubmit}>
                     <div className="user-box">
-                        <Input tipo={"text"} contenidoAPoner={mascotaRef} label={"Nombre de la Mascota"}/>
+                        <Input tipo={"text"} contenidoAPoner={mascotaRef} name="mascota" label={"Nombre de la Mascota"}/>
                     </div>
                     <div className="user-box">
-                        <Input tipo={"text"} contenidoAPoner={dueñoRef} label={"Nombre del dueño"}/>
+                        <Input tipo={"text"} contenidoAPoner={dueñoRef} name="dueño" label={"Nombre del dueño"}/>
                     </div>
                     <div className="user-box">
-                        <Input tipo={"date"} contenidoAPoner={fechaRef} label={"Fecha"}/>
+                        <Input tipo={"date"} contenidoAPoner={fechaRef} name="fecha" label={"Fecha"}/>
                     </div>
                     <div className="user-box">
-                        <Input tipo={"time"} contenidoAPoner={horaRef} label={"Hora"}/>
+                        <Input tipo={"time"} contenidoAPoner={horaRef} name="hora" label={"Hora"}/>
                     </div>
                     <div className="user-box">
-                        <Input tipo={"text"} contenidoAPoner={sintomasRef} label={"Síntomas"}/>
+                        <Input tipo={"text"} contenidoAPoner={sintomasRef} name="sintomas" label={"Síntomas"}/>
                     </div>
                     <center>
                         <a href="#" onClick={handleSubmit}>

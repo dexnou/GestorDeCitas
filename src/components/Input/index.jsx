@@ -18,7 +18,6 @@ const Input = ({ tipo, contenidoAEscribir, label }) => {
                     required
                     style={{ ...style.input, ...style.inputDate }}
                     onFocus={handleFocus}
-                    onBlur={handleBlur}
                 />
             <label>{label}</label>
         </>
