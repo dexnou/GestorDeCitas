@@ -26,7 +26,12 @@ const Formulario = (props) => {
             return;
         }
 
-        
+        const regex = /[a-zA-Z]/;
+        if(!regex.test(mascota) || !regex.test(dueño) || !regex.test(sintomas)){
+            alert('Los campos de nombre de mascota, nombre de dueño y sintomas deben contener por lo menos una letra');
+            return;
+        }
+
 
         // Convertir la fecha y hora ingresadas en milisegundos
         const fechaSeleccionada = new Date(fecha + 'T' + hora);
@@ -49,14 +54,15 @@ const Formulario = (props) => {
             sintomas: sintomas
         };
 
-        props.agregarCita(nuevaCita); // Call the parent function to add the new cita
-
         // Resetea los valores de los campos
-        mascotaRef.current.value = '';
-        dueñoRef.current.value = '';
-        fechaRef.current.value = '';
-        horaRef.current.value = '';
-        sintomasRef.current.value = '';
+        if(props.agregarCita(nuevaCita)){
+            mascotaRef.current.value = '';
+            dueñoRef.current.value = '';
+            fechaRef.current.value = '';
+            horaRef.current.value = '';
+            sintomasRef.current.value = '';
+        }
+        
     };
 
     return (
@@ -66,19 +72,19 @@ const Formulario = (props) => {
             <div className="form-box">
                 <form onSubmit={handleSubmit}>
                     <div className="user-box">
-                        <Input tipo={"text"} contenidoAPoner={mascotaRef} name="mascota" label={"Nombre de la Mascota"}/>
+                        <Input tipo={"text"} contenidoAPoner={mascotaRef} name={"mascota"} label={"Nombre de la Mascota"}/>
                     </div>
                     <div className="user-box">
-                        <Input tipo={"text"} contenidoAPoner={dueñoRef} name="dueño" label={"Nombre del dueño"}/>
+                        <Input tipo={"text"} contenidoAPoner={dueñoRef} name={"dueño"} label={"Nombre del dueño"}/>
                     </div>
                     <div className="user-box">
-                        <Input tipo={"date"} contenidoAPoner={fechaRef} name="fecha" label={"Fecha"}/>
+                        <Input tipo={"date"} contenidoAPoner={fechaRef} name={"fecha"} label={"Fecha"}/>
                     </div>
                     <div className="user-box">
-                        <Input tipo={"time"} contenidoAPoner={horaRef} name="hora" label={"Hora"}/>
+                        <Input tipo={"time"} contenidoAPoner={horaRef} name={"hora"} label={"Hora"}/>
                     </div>
                     <div className="user-box">
-                        <Input tipo={"text"} contenidoAPoner={sintomasRef} name="sintomas" label={"Síntomas"}/>
+                        <Input tipo={"text"} contenidoAPoner={sintomasRef} name={"sintomas"} label={"Síntomas"}/>
                     </div>
                     <center>
                         <a href="#" onClick={handleSubmit}>

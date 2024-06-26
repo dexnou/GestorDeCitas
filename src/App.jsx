@@ -20,7 +20,10 @@ function App() {
           const citasActualizadas = [...citas, nuevaCita];
           setCitas(citasActualizadas);
           localStorage.setItem('citas', JSON.stringify(citasActualizadas));
+
+          return true;
         }
+        return false;
 
   };
 
@@ -36,13 +39,14 @@ function App() {
 
   return (
       <>
-          <div className="App">
-              <div className='subDiv'>
-                  <Formulario agregarCita={agregarCita} />
-              </div>
-              <div className='subDiv'>
-                  <Listado citas={citas} setCitas={setCitas} eliminarCita={eliminarCita} />
-              </div>
+      <h1>Administración de Pacientes</h1>
+        <div className='App'>
+            <div className='subDiv'>
+                <Formulario agregarCita={agregarCita} />
+            </div>
+            <div className='subDiv'>
+                <Listado citas={citas} setCitas={setCitas} eliminarCita={eliminarCita} />
+            </div>
           </div>
       </>
   );

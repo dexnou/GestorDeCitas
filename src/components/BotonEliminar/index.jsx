@@ -3,7 +3,7 @@ import React from 'react'
 
 const BotonEliminar = ({onclick}) => {
     return (
-        <button style={style.botonEliminar} onClick={onclick}>Eliminar</button>
+        <button style={style.botonEliminar} onClick={onclick}>Eliminar X</button>
     )
 };
 

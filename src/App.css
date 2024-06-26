@@ -35,10 +35,25 @@
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+.staatliches-regular {
+  font-family: "Staatliches", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .App {
   display: flex;
   width: 100%;
   justify-content: space-around;
+}
+h1, h2 {
+  text-transform: uppercase;
+  font-family: 'Staatliches';
+  text-align: center;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 250%;
 }
 .subDiv{
   width: 100%;
