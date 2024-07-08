@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import Cita from "../../components/Cita"
+import Cita from "../Cita";
 import './style.css';
 
 

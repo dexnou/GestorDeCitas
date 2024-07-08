@@ -1,8 +1,7 @@
 import logo from './logo.svg';
 import React, { useEffect, useState, useRef } from "react";
 import './App.css';
-import Formulario from './views/Formulario'
-import Listado from './views/Listado';
+import MainView from "./views/MainView";
 
 function App() {
   const [citas, setCitas] = useState([]);
@@ -41,13 +40,8 @@ function App() {
       <>
       <h1>Administración de Pacientes</h1>
         <div className='App'>
-            <div className='subDiv'>
-                <Formulario agregarCita={agregarCita} />
-            </div>
-            <div className='subDiv'>
-                <Listado citas={citas} setCitas={setCitas} eliminarCita={eliminarCita} />
-            </div>
-          </div>
+          <MainView agregarCita={agregarCita} citas={citas} setCitas={setCitas} eliminarCita={eliminarCita}/>
+        </div>
       </>
   );
 }
